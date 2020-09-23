@@ -4,49 +4,48 @@ import sys
 import os.path
 from os import path
 
-file_name = "‪‪C:\Users\jorda\Desktop\\file"
+file_name = "test.txt"
 
 def is_file(file_name):
 	if path.isfile(file_name) == False:
 		print(f"File does not exist matching this path: { file_name }")
 		exit()
-		
+
 def read_file(file_name, dct):
 	with open(file_name, 'r') as file:
 		for line in file:
-			string = line
-			if '#' not in string and string.isspace() == False:
-				lst = string.split()
-				#print(lst)
-				
-				kwd = lst[0]
+			if '#' not in line and line.isspace() == False:
+				lst = line.split()
+				device_attribute = lst[0]
 				setting = lst[1]
-				if kwd in dct:
-					dct.update({kwd : setting})
-					print(dct)
+				if device_attribute in dct:
+					dct.update({device_attribute : setting})
+					
 
-def dct_update():
+def settings_update():
 	pass
 					
-					
+def read_lines(file_name):
+    with open(file_name, 'r') as file:
+	    file_contents = file.readlines()
+	    return file_contents 					
 				
 			
 
 def main():
 	
 	#dict
-	dct = {"device_name" : None,"device_port" : None,
+	settings = {"device_name" : None,"device_port" : None,
 	 "device_purpose" : None}
 	
 	#Check if file exists
 	is_file(file_name)
 	
 	#reading file
-	read_file(file_name, dct)
+	read_file(file_name, settings)
 	
 	#seperate lines into variables
-	
-				
+	print(settings)		
 	
 
 
