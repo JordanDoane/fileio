@@ -39,13 +39,16 @@ def main():
 	 "device_purpose" : None}
 	
 	#Check if file exists
-	is_file(file_name)
+	#is_file(file_name)
 	
 	#reading file
-	read_file(file_name, settings)
+	#read_file(file_name, settings)
 	
 	#seperate lines into variables
-	print(settings)		
+	#print(settings)		
+
+	text = read_lines(file_name)
+	print(text)
 	
 
 
