@@ -17,9 +17,9 @@ def main():
 			file.writelines(""" 
 #This is a default file. Make changes where needed
 			
-	device_name = None
-	device_ip = None
-	device_purpose = None
+	device_name  None
+	device_port  None
+	device_purpose  None
 			
 			""")
 			
